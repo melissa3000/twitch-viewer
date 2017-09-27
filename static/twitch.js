@@ -111,6 +111,7 @@ var data = [
 var displayName;
 var link;
 var status;
+var streaming;
 
 
 for (var i = 0; i < data.length; i++) {
@@ -119,19 +120,21 @@ for (var i = 0; i < data.length; i++) {
   }
   if (data[i].stream === null){
     displayName = data[i].display_name;
-    console.log("displayName: " + displayName);
-    link = data[i]._links.self;
-    console.log("link: " + link);
+    // console.log("displayName: " + displayName);
+    link = "https://www.twitch.tv/" + displayName;
+    // console.log("link: " + link);
+    streaming = "Not currently streaming";
   } else {
     displayName = data[i].stream.display_name;
-    console.log("displayName: " + displayName);
+    // console.log("displayName: " + displayName);
     status = data[i].stream.status;
-    link = data[i].stream._links.self;
-    console.log("status" + status);
-    console.log("link: " + link);
+    link = data[i].stream.url;
+    streaming = "Online now";
+    // console.log("status" + status);
+    // console.log("link: " + link);
   }
   var list = "";
-  list = '<a target="_blank" href='+link+"><li><b>"+displayName+"</b><br>"+status+"</li></a><br>";
+  list = '<a target="_blank" href='+link+"><li><b>"+displayName+"</b><br>"+status+"<br>"+streaming+"</li></a><br>";
   $("#channels").append(list);
 
 }
