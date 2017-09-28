@@ -11,7 +11,7 @@ This single page app uses hard coded data that mimics results from the Twitch AP
 * Simulated Twitch API
 
 
-![alt text](/static/Twitch Screen Shot.png "App Screen Shot")
+![alt text](/static/Twitch_Screen_Shot.png "App Screen Shot")
 
 
 When the user clicks on a channel a new window opens directly to the selected channel on Twitch.
