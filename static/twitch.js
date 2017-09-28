@@ -47,6 +47,7 @@ var data = [
   {
     "stream": null,
     "display_name": "OgamingSC2",
+    "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-profile_image-9021dccf9399929e-300x300.jpeg",
     "_links": {
       "self": "https://api.twitch.tv/kraken/streams/ogamingsc2",
       "channel": "https://api.twitch.tv/kraken/channels/ogamingsc2"
@@ -95,6 +96,7 @@ var data = [
   {
     "stream": null,
     "display_name": "noobs2ninjas",
+    "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-profile_image-34707f847a73d934-300x300.png",
     "_links": {
       "self": "https://api.twitch.tv/kraken/streams/esl_sc2",
       "channel": "https://api.twitch.tv/kraken/channels/esl_sc2"
@@ -112,6 +114,7 @@ var displayName;
 var link;
 var status;
 var streaming;
+var logo;
 
 
 for (var i = 0; i < data.length; i++) {
@@ -124,6 +127,7 @@ for (var i = 0; i < data.length; i++) {
     link = "https://www.twitch.tv/" + displayName;
     // console.log("link: " + link);
     status = '';
+    logo = data[i].logo;
     // streaming = "Not currently streaming";
     streaming = "<h5><span class="+'"glyphicon glyphicon-alert"'+"></span></h5>";
   } else {
@@ -131,19 +135,22 @@ for (var i = 0; i < data.length; i++) {
     // console.log("displayName: " + displayName);
     status = data[i].stream.status;
     link = data[i].stream.url;
+    // console.log(link);
     // streaming = "Online now";
     streaming = "<h5 style="+'"color:green;"'+">streaming now <span color=green class="+'"glyphicon glyphicon-ok"'+"></span></h5>";
-
+    logo = data[i].stream.logo;
     // console.log("status" + status);
     // console.log("link: " + link);
   }
   var list = "";
-  list = '<a target="_blank" href='+link+"><li><b>"+displayName+"</b><br>"+status+"<br>"+streaming+"</li></a><br>";
+  list = '<a target="_blank" href='+link+"><li><img src="+logo+" class="+'img-circle'+"><b>"+displayName+"</b><br>"+status+"<br>"+streaming+"</li></a><br>";
   $("#channels").append(list);
+
+  console.log(list);
 
 }
 
-
+// '<img src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" class="w3-circle">'
 
 
 });

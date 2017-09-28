@@ -2,21 +2,15 @@ body {
   background-color: #6441A4 ;
 }
 
-.display-box {
+/*This breaks the links:*/
+/*#display-box {
   background-color: rgba(256,256,256,0.3);
   z-index: -1;
   border-radius: 25px;
+  padding: 20px;
+
 }
-
-
-/*.btn {
-  margin-top: 10px;
-}
-
-.form-control {
-  margin-top: 20px;
-}*/
-
+*/
 
 #channels li {
   list-style-position: inside;
@@ -29,5 +23,17 @@ body {
   padding-left: 5px
 }
 
+#twitch-logo {
+  display: block;
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  width:25%
+}
 
-
+.img-circle {
+    border-radius: 50%;
+    width:5%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
