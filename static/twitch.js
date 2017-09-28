@@ -123,13 +123,17 @@ for (var i = 0; i < data.length; i++) {
     // console.log("displayName: " + displayName);
     link = "https://www.twitch.tv/" + displayName;
     // console.log("link: " + link);
-    streaming = "Not currently streaming";
+    status = '';
+    // streaming = "Not currently streaming";
+    streaming = "<h5><span class="+'"glyphicon glyphicon-alert"'+"></span></h5>";
   } else {
     displayName = data[i].stream.display_name;
     // console.log("displayName: " + displayName);
     status = data[i].stream.status;
     link = data[i].stream.url;
-    streaming = "Online now";
+    // streaming = "Online now";
+    streaming = "<h5 style="+'"color:green;"'+">streaming now <span color=green class="+'"glyphicon glyphicon-ok"'+"></span></h5>";
+
     // console.log("status" + status);
     // console.log("link: " + link);
   }
