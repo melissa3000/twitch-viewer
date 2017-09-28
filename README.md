@@ -13,6 +13,7 @@ This single page app uses hard coded data that mimics results from the Twitch AP
 
 ![alt text](/static/Twitch Screen Shot.png "App Screen Shot")
 
+
 When the user clicks on a channel a new window opens directly to the selected channel on Twitch.
 
 ## Version 2.0
